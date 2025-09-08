@@ -1,0 +1,126 @@
+/* Reset e body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("./Hollow-knight/img/hk-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background: #222;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* Container de cards */
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+/* Card base */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card p {
+  color: #eaeaea;
+  margin-bottom: 15px;
+}
+
+/* Botão base */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px #fff;
+  transform: scale(1.05);
+}
+
+/* Card Hotline Miami */
+.card.hotline-miami {
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 20px #ff49d9, 0 0 35px #ff007f;
+  border: 2px solid #ff49d9;
+}
+
+.card.hotline-miami h2 {
+  color: #ff49d9;
+  text-shadow: 0 0 8px #ff49d9, 0 0 15px #ff007f;
+}
+
+.card.hotline-miami p {
+  color: #f0c0ff;
+  text-shadow: 0 0 5px rgba(255, 0, 127, 0.6);
+}
+
+.card.hotline-miami .btn {
+  background: linear-gradient(135deg, #ff007f, #ff49d9);
+}
+
+.card.hotline-miami .btn:hover {
+  box-shadow: 0 0 20px #ff49d9, 0 0 30px #ff007f;
+}
+
+/* Card Hollow Knight */
+.card.hollow-knight {
+  background: rgba(20, 20, 25, 0.9);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+}
+
+.card.hollow-knight h2 {
+  color: #9fa8da;
+  text-shadow: 0 0 10px #5a3eaf;
+}
+
+.card.hollow-knight .btn {
+  background: linear-gradient(135deg, #5a3eaf, #7b5fc7);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  bottom: 0;
+}

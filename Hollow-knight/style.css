@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#logo {
+  max-width: 20rem;
+  max-height: auto;
+}
+#logo {
+  max-width: 20rem;
+  max-height: auto;
+}
+
+#sair-bg {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5a3eaf, #7b5fc7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#sair-bg:hover {
+  box-shadow: 0 0 15px #7b5fc7;
+}
+#sair {
+  color: white;
+  font-size: 2em;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("./img/hk-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #1a1a1d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background: rgba(20, 20, 25, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #9fa8da;
+  text-shadow: 0 0 10px #5a3eaf;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  background: #0f0f10;
+  color: #eaeaea;
+  border: 1px solid #444;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7b5fc7;
+  box-shadow: 0 0 10px #7b5fc7;
+}
+
+button {
+  background: linear-gradient(135deg, #5a3eaf, #7b5fc7);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #7b5fc7;
+}
+
+form::before {
+  content: "";
+  background: url("./img/hk-knight.png") no-repeat center;
+  background-size: contain;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: -10px;
+  right: -10px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.container {
+  background: rgba(20, 20, 25, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #5a3eaf;
+}
+
+.container h2.sucesso {
+  color: #9fa8da;
+}
+
+.container h2.erro {
+  color: #ff6b6b;
+}
+
+.container p {
+  color: #eaeaea;
+  margin: 8px 0;
+}
+
+.container::before {
+  content: "";
+  background: url("./img/hk-knight.png") no-repeat center;
+  background-size: contain;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: -10px;
+  right: -10px;
+  opacity: 0.1;
+  pointer-events: none;
+}

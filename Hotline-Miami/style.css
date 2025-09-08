@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Body com fundo animado e centralizado */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-image: url('img/hot-bg.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay suave sobre o fundo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 30, 0.35);
+    z-index: 0;
+}
+
+/* Imagem de título com sombra neon */
+.titulo-img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0 0 15px #ff49d9) drop-shadow(0 0 25px #ff49d9);
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px 50px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #00f7ff;
+    box-shadow: 0 0 20px #ff49d9, 0 0 30px #00f7ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover suave no container */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #ff49d9, 0 0 40px #00f7ff;
+}
+
+/* Títulos e parágrafos */
+.container h1,
+.container p {
+    color: #ff49d9;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ff49d9, 0 0 10px #ff49d9;
+}
+
+/* Listas estilizadas */
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container li {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-left: 4px solid #00f7ff;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background 0.3s ease, border-left-color 0.3s ease;
+}
+
+/* Hover nos itens da lista */
+.container li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: #ff49d9;
+}
+
+/* Destaques dentro das listas */
+.container li strong {
+    color: #00f7ff;
+}
+
+/* Inputs e botões */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    border-color: #ff49d9;
+    box-shadow: 0 0 8px #ff49d9;
+}
+
+/* Botão enviar */
+input[type="submit"] {
+    background-color: #ff007f;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #ff007f, 0 0 15px #ff49d9;
+}
+
+input[type="submit"]:hover {
+    background-color: #cc0066;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff007f, 0 0 25px #ff49d9;
+}
