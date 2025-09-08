@@ -25,7 +25,7 @@
 /* Reset e body */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: url("bg.jpg") no-repeat center center fixed;
+  background: url("./img/bg.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--text-color);
   display: flex;
