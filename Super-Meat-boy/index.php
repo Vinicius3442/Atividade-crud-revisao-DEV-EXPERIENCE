@@ -45,13 +45,13 @@ $conn->close();
     <div class="container">
         <img src="logo.png" alt="Logo da Empresa" style="width:300px; height:auto;">
         <form method="post" action="">
-            <label>Nome do Produto:</label><br>
+            <label style="color: white;">Nome do Produto:</label><br>
             <input type="text" name="nome_produto" required><br>
 
-            <label>Nota (0 a 10):</label><br>
+            <label style="color: white;">Nota (0 a 10):</label><br>
             <input type="number" name="nota" min="0" max="10" required><br>
 
-            <label>Comentário:</label><br>
+            <label style="color: white;">Comentário:</label><br>
             <textarea name="comentario" rows="5"></textarea><br>
 
             <input type="submit" value="Enviar Feedback">
