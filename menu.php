@@ -22,10 +22,10 @@
 
         <!-- Card 2: Feedback de Produtos (Super Meat Boy) -->
         <div class="card super-meat-boy">
-            <img src= alt="Feedback de Produtos">
+            <img src="./Super-Meat-boy/logo.png" alt="Feedback de Produtos">
             <h2>Feedback de Produtos</h2>
             <p>Coleta de opiniões, no estilo Super Meat Boy.</p>
-            <a href="" class="btn">Acessar Projeto</a>
+            <a href="./Super-Meat-boy/index.php" class="btn">Acessar Projeto</a>
         </div>
 
         <!-- Card 3: Agendamento de Reuniões (Hollow Knight) -->

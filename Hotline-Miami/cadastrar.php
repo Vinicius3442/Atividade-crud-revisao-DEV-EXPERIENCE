@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dados Cadastrados</title>
-    <link rel="stylesheet" href="style.css.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -40,24 +40,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$mensagem = "Cadastro realisado com sucesso!"
-echo <script>alert ('".$mensagem."') </script>
-?>

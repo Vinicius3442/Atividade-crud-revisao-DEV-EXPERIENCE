@@ -1,22 +1,51 @@
+/* CSS Variables (Optional but Recommended) */
+:root {
+    --dark-bg: #222;
+    --text-color: #eaeaea;
+    --btn-default-bg: #444;
+
+    /* Hotline Miami */
+    --hotline-pink: #ff49d9;
+    --hotline-purple: #ff007f;
+    --hotline-light-purple: #f0c0ff;
+
+    /* Super Meat Boy */
+    --supermeat-red: #ff0000;
+    --supermeat-darkred: #8b0000;
+    --supermeat-yellow: #ffcc00;
+    --supermeat-light-yellow: #ffe066;
+
+    /* Hollow Knight */
+    --hollowknight-card-bg: rgba(20, 20, 25, 0.9);
+    --hollowknight-blue: #9fa8da;
+    --hollowknight-purple: #5a3eaf;
+    --hollowknight-light-purple: #7b5fc7;
+}
+
 /* Reset e body */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: url("./Hollow-knight/img/hk-bg.png") no-repeat center center fixed;
+  background: url("bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: #eaeaea;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  -webkit-font-smoothing: antialiased; /* Font smoothing */
+  -moz-osx-font-smoothing: grayscale; /* Font smoothing for Firefox */
 }
 
 /* Header */
 header {
-  background: #222;
+  background: var(--dark-bg);
   color: #fff;
   width: 100%;
   text-align: center;
   padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for header */
+  z-index: 10; /* Ensure header stays on top */
 }
 
 /* Container de cards */
@@ -26,6 +55,10 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px;
+  flex-grow: 1; /* Allow container to take up available space */
+  width: 100%; /* Ensure container takes full width */
+  max-width: 1200px; /* Limit max width for better readability on large screens */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 /* Card base */
@@ -39,12 +72,16 @@ header {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0; /* Prevent cards from shrinking */
 }
 
 .card img {
   width: 100%;
+  max-width: 100%; /* Make images responsive */
+  height: auto;    /* Maintain aspect ratio */
   border-radius: 12px;
   margin-bottom: 15px;
+  object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
 .card h2 {
@@ -54,8 +91,15 @@ header {
 }
 
 .card p {
-  color: #eaeaea;
+  color: var(--text-color);
   margin-bottom: 15px;
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Card Hover Effects */
+.card:hover {
+    transform: translateY(-8px) scale(1.03); /* Lift and slightly enlarge */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 }
 
 /* Botão base */
@@ -63,11 +107,13 @@ header {
   display: inline-block;
   padding: 12px 25px;
   border-radius: 25px;
-  background: #444;
+  background: var(--btn-default-bg);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate it's clickable */
 }
 
 .btn:hover {
@@ -75,52 +121,138 @@ header {
   transform: scale(1.05);
 }
 
+.btn:focus {
+    outline: 2px solid #fff; /* White outline for accessibility */
+    outline-offset: 3px;
+}
+
 /* Card Hotline Miami */
 .card.hotline-miami {
   background: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 0 20px #ff49d9, 0 0 35px #ff007f;
-  border: 2px solid #ff49d9;
+  box-shadow: 0 0 20px var(--hotline-pink), 0 0 35px var(--hotline-purple);
+  border: 2px solid var(--hotline-pink);
 }
 
 .card.hotline-miami h2 {
-  color: #ff49d9;
-  text-shadow: 0 0 8px #ff49d9, 0 0 15px #ff007f;
+  color: var(--hotline-pink);
+  text-shadow: 0 0 8px var(--hotline-pink), 0 0 15px var(--hotline-purple);
 }
 
 .card.hotline-miami p {
-  color: #f0c0ff;
+  color: var(--hotline-light-purple);
   text-shadow: 0 0 5px rgba(255, 0, 127, 0.6);
 }
 
 .card.hotline-miami .btn {
-  background: linear-gradient(135deg, #ff007f, #ff49d9);
+  background: linear-gradient(135deg, var(--hotline-purple), var(--hotline-pink));
 }
 
 .card.hotline-miami .btn:hover {
-  box-shadow: 0 0 20px #ff49d9, 0 0 30px #ff007f;
+  box-shadow: 0 0 20px var(--hotline-pink), 0 0 30px var(--hotline-purple);
 }
+.card.hotline-miami:hover { /* Specific hover for Hotline Miami */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px var(--hotline-pink), 0 0 45px var(--hotline-purple);
+}
+
+/* Card Super Meat Boy */
+.card.super-meat-boy {
+    background: rgba(175, 20, 20, 0.9); /* Darker red, slightly transparent */
+    box-shadow: 0 0 20px var(--supermeat-red), 0 0 35px var(--supermeat-darkred); /* Red glow */
+    border: 2px solid var(--supermeat-red);
+}
+
+.card.super-meat-boy h2 {
+    color: var(--supermeat-yellow); /* Yellowish for contrast */
+    text-shadow: 0 0 8px var(--supermeat-red), 0 0 15px var(--supermeat-darkred);
+}
+
+.card.super-meat-boy p {
+    color: var(--supermeat-light-yellow);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+}
+
+.card.super-meat-boy .btn {
+    background: linear-gradient(135deg, var(--supermeat-red), var(--supermeat-darkred)); /* Red gradient */
+}
+
+.card.super-meat-boy .btn:hover {
+    box-shadow: 0 0 20px var(--supermeat-red), 0 0 30px var(--supermeat-darkred);
+}
+.card.super-meat-boy:hover { /* Specific hover for Super Meat Boy */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px var(--supermeat-red), 0 0 45px var(--supermeat-darkred);
+}
+
 
 /* Card Hollow Knight */
 .card.hollow-knight {
-  background: rgba(20, 20, 25, 0.9);
+  background: var(--hollowknight-card-bg);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
 }
 
 .card.hollow-knight h2 {
-  color: #9fa8da;
-  text-shadow: 0 0 10px #5a3eaf;
+  color: var(--hollowknight-blue);
+  text-shadow: 0 0 10px var(--hollowknight-purple);
 }
 
 .card.hollow-knight .btn {
-  background: linear-gradient(135deg, #5a3eaf, #7b5fc7);
+  background: linear-gradient(135deg, var(--hollowknight-purple), var(--hollowknight-light-purple));
 }
+.card.hollow-knight:hover { /* Specific hover for Hollow Knight */
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.95), 0 0 45px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+}
+
 
 /* Footer */
 footer {
-  background: #222;
+  background: var(--dark-bg);
   color: #fff;
   text-align: center;
   padding: 20px;
   width: 100%;
-  bottom: 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }

@@ -12,7 +12,7 @@
       <img src="./img/Cadastrocliente.png" alt="Cadastro de Clientes" class="titulo-img">
       <p>Preencha as informações abaixo</p>
 
-        <form action="processa.php" method="POST">
+        <form action="cadastrar.php" method="POST">
           <label for="nome">Nome:</label><br>
           <input type="text" id="nome" name="nome" required><br>
 
